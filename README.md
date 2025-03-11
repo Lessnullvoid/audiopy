@@ -1,63 +1,50 @@
-# 🎵 AudioPy Educational Projects
+# 🎵 Proyectos Educativos de AudioPy
 
-A collection of Python-based audio projects designed for learning digital audio processing and synthesis.
+Una colección de proyectos de audio en Python diseñados para el aprendizaje del procesamiento de audio digital y la síntesis sonora.
 
-## 📚 Project Index
+## 📚 Índice de Proyectos
 
-### 1. [Interactive Sound Synthesizer](01.synth/)
-An educational tool for learning the fundamentals of sound synthesis through interactive experimentation. Features include:
-- 8 different waveform types (Sine, Square, Sawtooth, Triangle, Pulse, Noise, FM, Harmonics)
-- Real-time waveform visualization
-- Interactive frequency and filter control
-- Built-in delay effects
-- Visual grid interface for hands-on learning
-- Comprehensive documentation of synthesis concepts
+### 1. [Sintetizador de Sonido Interactivo](01.synth/)
+Una herramienta educativa para aprender los fundamentos de la síntesis de sonido a través de la experimentación interactiva. Sus características incluyen:
+- 8 tipos diferentes de formas de onda (Senoidal, Cuadrada, Diente de sierra, Triangular, Pulso, Ruido, FM, Armónicos).
+- Visualización en tiempo real de la forma de onda.
+- Control interactivo de frecuencia y filtros.
+- Efectos de retardo integrados.
+- Interfaz visual en cuadrícula para un aprendizaje práctico.
+- Documentación completa sobre los conceptos de síntesis.
 
-Perfect for:
-- Understanding basic waveforms and their characteristics
-- Learning about filters and audio effects
-- Exploring frequency and timbre relationships
-- Getting started with digital audio synthesis
+Ideal para aprender:
+- Comprender formas de onda básicas y sus características.
+- Aprender sobre filtros y efectos de audio.
+- Explorar relaciones entre frecuencia y timbre.
+- Introducirse en la síntesis de audio digital.
 
 ### 2. [Audio File Processor](02.sampling/)
-A professional-grade audio processing application focusing on audio file manipulation and effects. Features include:
-- Waveform visualization with time grid
-- Multiple audio processing effects:
+Una aplicación avanzada de procesamiento de audio centrada en la manipulación de archivos de sonido y efectos. Sus características incluyen:
+- Visualización de la forma de onda con cuadrícula de tiempo.
+- Múltiples efectos de procesamiento de audio:
   - Time stretching
   - Pitch shifting
   - Low-pass filtering
   - Reverb
-- Interactive selection and playback controls
+- Controles interactivos de selección y reproducción.
 - Professional dark theme UI
 
-Perfect for:
-- Learning audio file processing techniques
-- Understanding digital audio effects
-- Exploring signal processing concepts
-- Hands-on experience with audio manipulation
+Ideal para aprender:
+- Técnicas de procesamiento de archivos de audio.
+- Comprender efectos de audio digitales.
+- Explorar conceptos de procesamiento de señales.
+- Adquirir experiencia práctica en manipulación de audio.
 
 ## 🚀 Getting Started
 
-Each project has its own README with detailed installation instructions and documentation. Navigate to the project directories to learn more:
+Cada proyecto incluye su propio README con instrucciones detalladas de instalación y documentación. Puedes navegar a los directorios de los proyectos para obtener más información:
 
 - [01.synth/](01.synth/) - Sound Synthesis Learning Tool
 - [02.sampling/](02.sampling/) - Audio File Processor
 
-## 📋 Prerequisites
-
+## 📋 Requisitos Previos
 - Python 3.7+
-- Audio output device
-- Basic understanding of Python programming
+- Dispositivo de salida de audio
+- Conocimientos básicos de programación en Python
 
-## 🎓 Educational Value
-
-These projects are designed to provide hands-on experience with:
-- Digital audio fundamentals
-- Signal processing concepts
-- Real-time audio synthesis
-- Audio effects and manipulation
-- User interface design for audio applications
-
-## 📝 License
-
-This project is licensed under the MIT License - see the individual project directories for details. 
