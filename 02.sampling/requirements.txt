@@ -1,0 +1,9 @@
+pygame>=2.5.0
+numpy>=1.24.0
+sounddevice>=0.4.6
+soundfile>=0.12.1
+scipy>=1.11.0
+librosa>=0.10.1
+numba>=0.57.0
+pedalboard>=0.7.7
+pyobjc-framework-Cocoa>=9.2  # For macOS file dialogs 

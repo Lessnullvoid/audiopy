@@ -1,0 +1,16 @@
+# Core dependencies
+pygame-ce>=2.5.3    # Modern Pygame fork with better audio support and performance
+numpy>=1.26.0       # Numerical computations and array operations
+scipy>=1.11.3       # Signal processing and filtering
+sounddevice>=0.4.6  # Real-time audio streaming
+
+# Optional but recommended for better performance
+numba>=0.58.1       # JIT compilation for faster audio processing
+python-rtmidi>=1.5.8  # MIDI support (if needed)
+
+# System requirements:
+# Python >= 3.8
+# Audio output device
+# Minimum 2.0 GHz CPU recommended
+# 2GB RAM minimum
+# Operating System: Windows/macOS/Linux 
