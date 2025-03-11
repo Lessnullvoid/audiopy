@@ -1,5 +1,7 @@
 # Audio File Processor
 
+![Sampler Interface](assets/synth_interface.png)
+
 Audio processing application built with Python, featuring waveform visualization and various audio effects.
 
 ## Features
