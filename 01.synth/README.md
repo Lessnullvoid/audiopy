@@ -1,6 +1,6 @@
 # 🎹 Interactive Sound Synthesis Learning Tool
 
-![Synthesizer Interface](assets/synth_interface.png)
+![Synthesizer Interface](https://github.com/Lessnullvoid/audiopy/blob/main/01.synth/synth.png)
 
 An educational tool designed to help beginners understand the fundamentals of sound synthesis through interactive experimentation. It provides a visual and hands-on approach to learning about waveforms, filters, and audio effects.
 
