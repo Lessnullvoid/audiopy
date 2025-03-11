@@ -147,19 +147,18 @@ BUTTON_WIDTH = 100
 BUTTON_PANEL_WIDTH = 150
 WAVEFORM_MARGIN = 40
 DB_SCALE_WIDTH = 50
-STATUS_HEIGHT = 80  # Increased height for better readability
-WAVEFORM_TOP_MARGIN = HEIGHT * 0.05  # Reduced top margin
-WAVEFORM_HEIGHT = HEIGHT * 0.65  # Increased height for larger waveform display
+STATUS_HEIGHT = 80
+WAVEFORM_TOP_MARGIN = HEIGHT * 0.08  # Adjusted to match space between orange lines
+WAVEFORM_HEIGHT = HEIGHT * 0.45  # Adjusted height to fit between orange lines
 
 # Slider Settings
 SLIDER_CONFIG = {
-    "width": 350,  # Slightly narrower to fit side by side
+    "width": 350,
     "height": 10,
     "knob_size": 15,
-    "pitch_range": (-12, 12),    # Semitones
-    "filter_range": (20, 20000), # Hz
-    "stretch_range": (0.25, 4.0),# Time stretch factor
-    # Reverb parameters
+    "pitch_range": (-12, 12),
+    "filter_range": (20, 20000),
+    "stretch_range": (0.25, 4.0),
     "reverb_room_range": (0.0, 1.0),
     "reverb_damping_range": (0.0, 1.0),
     "reverb_mix_range": (0.0, 1.0)
@@ -176,23 +175,23 @@ clock = pygame.time.Clock()
 
 # Create UI Elements
 buttons = {
-    "Load": pygame.Rect(WIDTH - (BUTTON_WIDTH + PANEL_MARGIN), HEIGHT * 0.1, BUTTON_WIDTH, BUTTON_HEIGHT),
-    "Play": pygame.Rect(WIDTH - (BUTTON_WIDTH + PANEL_MARGIN), HEIGHT * 0.1 + BUTTON_HEIGHT + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT),
-    "Save": pygame.Rect(WIDTH - (BUTTON_WIDTH + PANEL_MARGIN), HEIGHT * 0.1 + 2 * (BUTTON_HEIGHT + BUTTON_SPACING), BUTTON_WIDTH, BUTTON_HEIGHT),
-    "Reverse": pygame.Rect(WIDTH - (BUTTON_WIDTH + PANEL_MARGIN), HEIGHT * 0.1 + 3 * (BUTTON_HEIGHT + BUTTON_SPACING), BUTTON_WIDTH, BUTTON_HEIGHT),
-    "Quit": pygame.Rect(WIDTH - (BUTTON_WIDTH + PANEL_MARGIN), HEIGHT * 0.1 + 4 * (BUTTON_HEIGHT + BUTTON_SPACING), BUTTON_WIDTH, BUTTON_HEIGHT)
+    "Load": pygame.Rect(WIDTH - (BUTTON_WIDTH + PANEL_MARGIN), HEIGHT * 0.08, BUTTON_WIDTH, BUTTON_HEIGHT),
+    "Play": pygame.Rect(WIDTH - (BUTTON_WIDTH + PANEL_MARGIN), HEIGHT * 0.08 + BUTTON_HEIGHT + BUTTON_SPACING, BUTTON_WIDTH, BUTTON_HEIGHT),
+    "Save": pygame.Rect(WIDTH - (BUTTON_WIDTH + PANEL_MARGIN), HEIGHT * 0.08 + 2 * (BUTTON_HEIGHT + BUTTON_SPACING), BUTTON_WIDTH, BUTTON_HEIGHT),
+    "Reverse": pygame.Rect(WIDTH - (BUTTON_WIDTH + PANEL_MARGIN), HEIGHT * 0.08 + 3 * (BUTTON_HEIGHT + BUTTON_SPACING), BUTTON_WIDTH, BUTTON_HEIGHT),
+    "Quit": pygame.Rect(WIDTH - (BUTTON_WIDTH + PANEL_MARGIN), HEIGHT * 0.08 + 4 * (BUTTON_HEIGHT + BUTTON_SPACING), BUTTON_WIDTH, BUTTON_HEIGHT)
 }
 
-# Create Sliders
+# Create slider positions with adjusted heights
 slider_positions = {
-    # Left side - non-reverb controls
-    "stretch": (HEIGHT * 0.5 + 60, "left"),
-    "filter": (HEIGHT * 0.5 + 140, "left"),
-    "pitch": (HEIGHT * 0.5 + 220, "left"),
-    # Right side - reverb controls
-    "reverb_room": (HEIGHT * 0.5 + 60, "right"),
-    "reverb_damping": (HEIGHT * 0.5 + 140, "right"),
-    "reverb_mix": (HEIGHT * 0.5 + 220, "right")
+    # Left column
+    "stretch": (HEIGHT * 0.65, "left"),
+    "filter": (HEIGHT * 0.72, "left"),
+    "pitch": (HEIGHT * 0.79, "left"),
+    # Right column
+    "reverb_room": (HEIGHT * 0.65, "right"),
+    "reverb_damping": (HEIGHT * 0.72, "right"),
+    "reverb_mix": (HEIGHT * 0.79, "right")
 }
 
 # Create slider rectangles with left/right positioning
