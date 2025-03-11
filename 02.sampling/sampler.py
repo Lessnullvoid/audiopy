@@ -1,4 +1,5 @@
 """
+LESLIE GARCIA - 2025
 Audio File Processor - Component Index
 ====================================
 

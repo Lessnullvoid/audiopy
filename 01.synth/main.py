@@ -1,4 +1,5 @@
 """
+LESLIE GARCIA - 2025 
 MAIN.PY - SYNTHESIZER USER INTERFACE AND CONTROL
 ==============================================
 
