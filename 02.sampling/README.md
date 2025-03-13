@@ -1,34 +1,34 @@
-# Audio File Processor
+# Procesador de Archivos de Audio
 
 ![Sampler Interface](https://github.com/Lessnullvoid/audiopy/blob/main/02.sampling/sampler.png)
 
-Audio processing application built with Python, featuring waveform visualization and various audio effects.
+Aplicación de procesamiento de audio construida con Python, con visualización de forma de onda y varios efectos de audio.
 
-## Features
+## Características
 
-- Waveform visualization with time grid
-- Multiple audio processing effects (time stretch, pitch shift, filter, reverb)
-- Interactive selection and playback controls
-- Professional dark theme UI with green accents
-- Thread-safe processing for smooth operation
-- Comprehensive error handling
+- Visualización de forma de onda con cuadrícula de tiempo
+- Múltiples efectos de procesamiento de audio (estiramiento de tiempo, cambio de tono, filtro, reverb)
+- Controles interactivos de selección y reproducción
+- Interfaz de usuario con tema oscuro profesional y acentos verdes
+- Procesamiento seguro para hilos para operación fluida
+- Manejo integral de errores
 
-## Dependencies
+## Dependencias
 
 ```bash
-pygame          # GUI and user interface
-numpy           # Audio data manipulation
-sounddevice     # Audio playback
-soundfile       # Audio file handling
-scipy           # Signal processing
-librosa         # Advanced audio processing
-pedalboard      # Audio effects (reverb)
-numba           # Performance optimization
+pygame          # GUI e interfaz de usuario
+numpy           # Manipulación de datos de audio
+sounddevice     # Reproducción de audio
+soundfile       # Manejo de archivos de audio
+scipy           # Procesamiento de señales
+librosa         # Procesamiento avanzado de audio
+pedalboard      # Efectos de audio (reverb)
+numba           # Optimización de rendimiento
 ```
 
-## Code Structure
+## Estructura del Código
 
-### 1. Imports and Dependencies
+### 1. Importaciones y Dependencias
 ```python
 import pygame
 import numpy as np
@@ -39,183 +39,183 @@ import librosa
 import os, threading, time, sys, numba
 from pedalboard import Pedalboard, Reverb
 ```
-Handles all necessary libraries for audio processing, GUI, and system operations.
+Maneja todas las bibliotecas necesarias para el procesamiento de audio, GUI y operaciones del sistema.
 
-### 2. Configuration Settings
-- Window dimensions (900x1000)
-- Professional dark theme color scheme
-- Audio sample rate (44100 Hz)
-- UI layout parameters
+### 2. Configuración
+- Dimensiones de la ventana (900x1000)
+- Esquema de colores de tema oscuro profesional
+- Tasa de muestreo de audio (44100 Hz)
+- Parámetros de diseño de la interfaz
 
-### 3. UI Layout
-- Large waveform display (65% of window height)
-- Status areas at bottom
-- Control buttons on right side
-- Interactive sliders for effect parameters
+### 3. Diseño de la Interfaz
+- Pantalla grande de forma de onda (65% de la altura de la ventana)
+- Áreas de estado en la parte inferior
+- Botones de control en el lado derecho
+- Deslizadores interactivos para parámetros de efectos
 
-### 4. Audio State Management
+### 4. Gestión del Estado del Audio
 ```python
 class AudioState:
-    # Manages:
-    - Current audio data
-    - Playback status
-    - Effect parameters
-    - UI interaction state
+    # Gestiona:
+    - Datos de audio actuales
+    - Estado de reproducción
+    - Parámetros de efectos
+    - Estado de interacción con la interfaz
 ```
 
-### 5. Core Features
+### 5. Características Principales
 
-#### Audio Loading
-- Supports multiple formats (WAV, MP3, OGG, FLAC)
-- Automatic mono conversion
-- Sample rate matching
-- Error handling
+#### Carga de Audio
+- Soporta múltiples formatos (WAV, MP3, OGG, FLAC)
+- Conversión automática a mono
+- Coincidencia de tasa de muestreo
+- Manejo de errores
 
-#### Audio Playback
-- Optimized streaming playback
-- Selection playback support
-- Threaded position updates
-- Visual feedback
+#### Reproducción de Audio
+- Reproducción optimizada por streaming
+- Soporte para reproducción de selección
+- Actualizaciones de posición en hilos
+- Retroalimentación visual
 
-#### Waveform Visualization
-- Time grid display
-- RMS level visualization
-- Selection highlighting
-- Playback position indicator
+#### Visualización de Forma de Onda
+- Visualización de cuadrícula de tiempo
+- Visualización de niveles RMS
+- Resaltado de selección
+- Indicador de posición de reproducción
 
-#### Audio Processing Effects
-- Time Stretching: Modify speed while preserving pitch
-- Pitch Shifting: Adjust pitch without affecting speed
-- Low-pass Filter: Control frequency cutoff
-- Reverb: Add space/room effect
-- Reverse: Reverse audio playback
+#### Efectos de Procesamiento de Audio
+- Estiramiento de Tiempo: Modificar velocidad manteniendo el tono
+- Cambio de Tono: Ajustar tono sin afectar la velocidad
+- Filtro Paso Bajo: Control de frecuencia de corte
+- Reverb: Añadir efecto de espacio/sala
+- Reversa: Reproducción inversa del audio
 
-### 6. Processing Architecture
-- Thread-safe processing queue
-- Non-blocking UI during processing
-- Real-time status updates
-- Optimized processing with Numba
+### 6. Arquitectura de Procesamiento
+- Cola de procesamiento segura para hilos
+- Interfaz no bloqueante durante el procesamiento
+- Actualizaciones de estado en tiempo real
+- Procesamiento optimizado con Numba
 
-### 7. User Interface Features
+### 7. Características de la Interfaz de Usuario
 
-#### Interactive Controls
-- Operation buttons (Load, Play, Save, Reverse)
-- Effect parameter sliders
-- Waveform selection by dragging
-- Real-time parameter adjustment
+#### Controles Interactivos
+- Botones de operación (Cargar, Reproducir, Guardar, Reversa)
+- Deslizadores de parámetros de efectos
+- Selección de forma de onda arrastrando
+- Ajuste de parámetros en tiempo real
 
-#### Status Display
-- Audio file information
-- Processing status
-- Current effect parameters
-- Real-time updates
+#### Pantalla de Estado
+- Información del archivo de audio
+- Estado de procesamiento
+- Parámetros actuales de efectos
+- Actualizaciones en tiempo real
 
-### 8. Performance Optimizations
+### 8. Optimizaciones de Rendimiento
 ```python
 @jit(nopython=True, parallel=True, fastmath=True)
 def process_audio_chunk():
-    # Optimized processing with:
-    - Numba JIT compilation
-    - Parallel processing
-    - Optimized memory usage
+    # Procesamiento optimizado con:
+    - Compilación JIT de Numba
+    - Procesamiento paralelo
+    - Uso optimizado de memoria
 ```
 
-### 9. Error Handling
-- Comprehensive try-catch blocks
-- User-friendly error messages
-- Graceful error recovery
-- Detailed error logging
+### 9. Manejo de Errores
+- Bloques try-catch integrales
+- Mensajes de error amigables
+- Recuperación elegante de errores
+- Registro detallado de errores
 
-### 10. File Operations
-- Native file dialogs
-- WAV format support
-- Save/Load error handling
-- Status feedback
+### 10. Operaciones de Archivo
+- Diálogos de archivo nativos
+- Soporte para formato WAV
+- Manejo de errores de guardar/cargar
+- Retroalimentación de estado
 
-## Audio Processing Algorithms
+## Algoritmos de Procesamiento de Audio
 
-### Signal Processing Fundamentals
+### Fundamentos del Procesamiento de Señales
 
-#### 1. RMS Level Calculation
+#### 1. Cálculo de Nivel RMS
 ```python
 @jit(nopython=True, fastmath=True)
 def calculate_rms_levels(audio, window_size):
     """
-    Calculates Root Mean Square levels for waveform visualization
-    - Uses windowing for efficient computation
-    - Optimized with Numba JIT compilation
-    - Time complexity: O(n), where n is the audio length
+    Calcula niveles de Raíz Media Cuadrática para visualización de forma de onda
+    - Utiliza ventaneo para computación eficiente
+    - Optimizado con compilación JIT de Numba
+    - Complejidad temporal: O(n), donde n es la longitud del audio
     """
     rms_levels[i] = np.sqrt(np.mean(window * window))
 ```
 
-#### 2. Audio Normalization
+#### 2. Normalización de Audio
 ```python
 @jit(nopython=True, parallel=True, fastmath=True)
 def normalize_audio(audio):
     """
-    Normalizes audio to prevent clipping
-    - Finds maximum absolute amplitude
-    - Scales entire signal to prevent distortion
-    - Parallel processing for large files
+    Normaliza audio para prevenir recorte
+    - Encuentra amplitud absoluta máxima
+    - Escala toda la señal para prevenir distorsión
+    - Procesamiento paralelo para archivos grandes
     """
     max_val = np.max(np.abs(audio))
     return audio / max_val if max_val > 0 else audio
 ```
 
-### Effect Processing Algorithms
+### Algoritmos de Procesamiento de Efectos
 
-#### 1. Time Stretching
-- **Algorithm**: Phase Vocoder
-- **Implementation**: librosa.effects.time_stretch
-- **Process**:
-  1. Short-time Fourier Transform (STFT) of input
-  2. Phase advancement calculation
-  3. Modification of hop length
-  4. Inverse STFT for reconstruction
-- **Complexity**: O(n log n) due to FFT operations
+#### 1. Estiramiento de Tiempo
+- **Algoritmo**: Vocoder de Fase
+- **Implementación**: librosa.effects.time_stretch
+- **Proceso**:
+  1. Transformada de Fourier de Tiempo Corto (STFT) de entrada
+  2. Cálculo de avance de fase
+  3. Modificación de longitud de salto
+  4. STFT inversa para reconstrucción
+- **Complejidad**: O(n log n) debido a operaciones FFT
 
-#### 2. Pitch Shifting
-- **Algorithm**: PSOLA (Pitch-Synchronous Overlap-Add)
-- **Implementation**: librosa.effects.pitch_shift
-- **Process**:
-  1. Time-domain analysis for pitch detection
-  2. Resampling for pitch modification
-  3. Overlap-add synthesis
-  4. Time correction to maintain duration
-- **Parameters**:
-  - Range: ±12 semitones
-  - Preserves formant structure
+#### 2. Cambio de Tono
+- **Algoritmo**: PSOLA (Adición de Superposición Síncrona de Tono)
+- **Implementación**: librosa.effects.pitch_shift
+- **Proceso**:
+  1. Análisis en dominio temporal para detección de tono
+  2. Remuestreo para modificación de tono
+  3. Síntesis de adición de superposición
+  4. Corrección de tiempo para mantener duración
+- **Parámetros**:
+  - Rango: ±12 semitonos
+  - Preserva estructura de formantes
 
-#### 3. Low-Pass Filter
+#### 3. Filtro Paso Bajo
 ```python
 @jit(nopython=True, fastmath=True)
 def apply_filter_kernel(audio, cutoff, sample_rate):
     """
-    First-order IIR (Infinite Impulse Response) filter
-    - Single-pole implementation
-    - Optimized coefficient calculation
-    - Linear phase response
+    Filtro IIR (Respuesta Impulsiva Infinita) de primer orden
+    - Implementación de polo único
+    - Cálculo optimizado de coeficientes
+    - Respuesta de fase lineal
     """
     nyquist = sample_rate * 0.5
     normalized_cutoff = cutoff / nyquist
     alpha = normalized_cutoff / (normalized_cutoff + 1.0)
     
-    # IIR filter implementation
+    # Implementación de filtro IIR
     output[i] = output[i-1] + alpha * (audio[i] - output[i-1])
 ```
-- **Characteristics**:
-  - Cutoff Range: 20 Hz - 20 kHz
-  - -6 dB/octave roll-off
-  - Minimal phase distortion
+- **Características**:
+  - Rango de Corte: 20 Hz - 20 kHz
+  - Roll-off de -6 dB/octava
+  - Distorsión de fase mínima
 
-#### 4. Reverb Processing
+#### 4. Procesamiento de Reverb
 ```python
 def apply_reverb():
     """
-    Uses Pedalboard's Reverb implementation
-    - Room simulation algorithm
-    - Early reflections + late reverberation
+    Utiliza la implementación de Reverb de Pedalboard
+    - Algoritmo de simulación de sala
+    - Reflexiones tempranas + reverberación tardía
     """
     board = Pedalboard([Reverb(
         room_size=params["room_size"],
@@ -225,117 +225,110 @@ def apply_reverb():
         width=1.0
     )])
 ```
-- **Parameters**:
-  - Room Size: 0.0 - 1.0 (small to large space)
-  - Damping: 0.0 - 1.0 (absorption factor)
-  - Mix: Wet/dry signal ratio
+- **Parámetros**:
+  - Tamaño de Sala: 0.0 - 1.0 (espacio pequeño a grande)
+  - Amortiguación: 0.0 - 1.0 (factor de absorción)
+  - Mezcla: Relación señal húmeda/seca
 
-### Audio Streaming and Playback
+### Streaming y Reproducción de Audio
 
-#### 1. Chunk Processing
+#### 1. Procesamiento de Chunks
 ```python
 @jit(nopython=True, parallel=True, fastmath=True)
 def process_audio_chunk(chunk, frames, current_pos, total_length):
     """
-    Optimized streaming audio processing
-    - Circular buffer implementation
-    - Parallel frame processing
-    - Zero-copy operations where possible
+    Procesamiento optimizado de audio por streaming
+    - Implementación de buffer circular
+    - Procesamiento paralelo de frames
+    - Operaciones sin copia donde sea posible
     """
     indices = np.zeros(frames, dtype=np.int32)
     for i in numba.prange(frames):
         indices[i] = (current_pos + i) % total_length
 ```
 
-#### 2. Playback Position Management
+#### 2. Gestión de Posición de Reproducción
 ```python
 def update_playback_position(duration):
     """
-    Threaded playback position tracking
-    - High-precision timing
-    - Non-blocking updates
-    - Smooth visual feedback
+    Seguimiento de posición de reproducción en hilos
+    - Temporización de alta precisión
+    - Actualizaciones no bloqueantes
+    - Retroalimentación visual suave
     """
     update_interval = 0.016  # ~60fps
     num_updates = int(duration / update_interval)
     time_points = np.linspace(0, duration, num_updates)
 ```
 
-### Memory Management
+### Gestión de Memoria
 
-#### 1. Audio Buffer Handling
-- **Contiguous Memory**: Uses numpy's ascontiguousarray for optimal memory access
-- **Memory Efficiency**:
-  - Streaming large files in chunks
-  - Automatic garbage collection of processed buffers
-  - Efficient memory reuse in processing chain
+#### 1. Manejo de Buffer de Audio
+- **Memoria Contigua**: Utiliza ascontiguousarray de numpy para acceso óptimo a memoria
+- **Eficiencia de Memoria**:
+  - Streaming de archivos grandes en chunks
+  - Recolección automática de basura de buffers procesados
+  - Reutilización eficiente de memoria en cadena de procesamiento
 
-#### 2. Processing Queue
+#### 2. Cola de Procesamiento
 ```python
 def process_audio_queue():
     """
-    Thread-safe processing queue
-    - FIFO (First-In-First-Out) operation
-    - Prevents memory leaks
-    - Handles task cancellation
+    Cola de procesamiento segura para hilos
+    - Operación FIFO (Primero en Entrar, Primero en Salir)
+    - Previene fugas de memoria
+    - Maneja cancelación de tareas
     """
 ```
 
-### Performance Optimizations
+### Optimizaciones de Rendimiento
 
-#### 1. Parallel Processing
-- **Numba JIT Compilation**:
-  - Machine code generation for compute-intensive functions
-  - SIMD instructions utilization
-  - Cache-friendly memory access patterns
+#### 1. Procesamiento Paralelo
+- **Compilación JIT de Numba**:
+  - Generación de código máquina para funciones intensivas en computación
+  - Utilización de instrucciones SIMD
+  - Patrones de acceso a memoria amigables con caché
 
-#### 2. Vectorized Operations
-- **NumPy Operations**:
-  - Vectorized array operations
-  - Efficient memory access
-  - Hardware-accelerated computations
+#### 2. Operaciones Vectorizadas
+- **Operaciones NumPy**:
+  - Operaciones de array vectorizadas
+  - Acceso eficiente a memoria
+  - Computaciones aceleradas por hardware
 
-#### 3. Real-time Processing
-- **Latency Management**:
-  - Buffer size optimization
-  - Priority-based thread scheduling
-  - Minimal processing overhead
+#### 3. Procesamiento en Tiempo Real
+- **Gestión de Latencia**:
+  - Optimización de tamaño de buffer
+  - Programación de hilos basada en prioridad
+  - Sobrecarga mínima de procesamiento
 
-This implementation provides a balance between:
-- Processing quality
-- Real-time performance
-- Memory efficiency
-- CPU utilization
+Esta implementación proporciona un balance entre:
+- Calidad de procesamiento
+- Rendimiento en tiempo real
+- Eficiencia de memoria
+- Utilización de CPU
 
-The algorithms are chosen and optimized for:
-- Minimal artifacts
-- Low latency
-- High quality output
-- Efficient resource usage
+Los algoritmos son elegidos y optimizados para:
+- Artefactos mínimos
+- Baja latencia
+- Alta calidad de salida
+- Uso eficiente de recursos
 
-## Usage
+## Uso
 
-1. Run the application:
+1. Ejecutar la aplicación:
 ```bash
 python sampler.py
 ```
 
-2. Load an audio file using the "Load" button
-3. Use the waveform display to:
-   - View audio content
-   - Make selections
-   - Monitor playback
-4. Adjust effects using sliders:
-   - Time stretch
-   - Pitch shift
-   - Filter cutoff
-   - Reverb parameters
-5. Save processed audio using the "Save" button
+2. Cargar un archivo de audio usando el botón "Cargar"
+3. Usar la pantalla de forma de onda para:
+   - Ver contenido de audio
+   - Hacer selecciones
+   - Monitorear reproducción
+4. Ajustar efectos usando deslizadores:
+   - Estiramiento de tiempo
+   - Cambio de tono
+   - Frecuencia de corte del filtro
+   - Parámetros de reverb
+5. Guardar audio procesado usando el botón "Guardar"
 
-## Contributing
-
-Feel free to submit issues and enhancement requests!
-
-## License
-
-[MIT License](LICENSE) 
