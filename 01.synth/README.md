@@ -1,63 +1,63 @@
-# 🎹 Interactive Sound Synthesis Learning Tool
+# 🎹 Herramienta Interactiva para el Aprendizaje de la Síntesis de Sonido
 
 ![Synthesizer Interface](https://github.com/Lessnullvoid/audiopy/blob/main/01.synth/synth.png)
 
-An educational tool designed to help beginners understand the fundamentals of sound synthesis through interactive experimentation. It provides a visual and hands-on approach to learning about waveforms, filters, and audio effects.
+Una herramienta educativa diseñada para ayudar a principiantes a comprender los fundamentos de la síntesis de sonido a través de la experimentación interactiva. Proporciona un enfoque visual y práctico para aprender sobre formas de onda, filtros y efectos de audio.
 
-## 🎼 What is Sound Synthesis?
+## 🎼 ¿Qué es la Síntesis de Sonido?
 
 Sound synthesis is the process of generating sound electronically. At its core, synthesis involves:
 
-1. **Oscillators**: Electronic circuits or digital algorithms that generate repeating waveforms
-2. **Waveforms**: Different shapes of sound waves that produce different timbres:
-   - 🌊 Sine wave: Pure tone, like a whistle
-   - ⬜ Square wave: Hollow, rich sound like old video games
-   - 📐 Sawtooth: Bright, buzzy sound common in electronic music
-   - 🔺 Triangle: Soft, mellow sound between sine and square
-   - ⚡ Pulse: Nasal, thin sound with variable width
-   - 🌫️ Noise: Random frequencies, useful for percussion and effects
-   - 🔄 FM: Frequency modulation for complex, evolving sounds
-   - 🎵 Harmonics: Multiple sine waves combined for rich tones
-3. **Filters**: Shape the tone by removing certain frequencies
+1. **Osciladores**: Circuitos electrónicos o algoritmos digitales que generan señales repetitivas.
+2. **Formas de onda**: Diferentes formas de onda producen diferentes timbres:
+   •	🌊 Onda Senoidal: Tono puro, como un silbido.
+	•	⬜ Onda Cuadrada: Sonido hueco y rico, como los videojuegos clásicos.
+	•	📐 Onda Diente de Sierra: Sonido brillante y zumbante, común en la música electrónica.
+	•	🔺 Onda Triangular: Sonido suave y cálido, entre la senoidal y la cuadrada.
+	•	⚡ Pulso: Sonido nasal y delgado con ancho de pulso variable.
+	•	🌫️ Ruido: Frecuencias aleatorias, útil para percusión y efectos.
+	•	🔄 FM: Modulación de frecuencia para sonidos complejos y dinámicos.
+	•	🎵 Armónicos: Combinación de ondas senoidales para crear tonos ricos.
+3. **Filtros** Modelan el tono al eliminar ciertas frecuencias.
 
-## 🎛️ Program Features
+## 🎛️ Características del Programa
 
-### 1. Interactive Grid Interface
-- X-axis: Controls frequency (pitch)
-- Y-axis: Controls filter cutoff in filter mode
-- Click and drag to explore different sounds
-- Real-time waveform visualization
+### 1. Interfaz de Cuadrícula Interactiva
+- Eje X: Controla la frecuencia (tono).
+- Eje Y: Controla el corte del filtro en el modo filtro.
+- Exploración Sonora: Haz clic y arrastra para experimentar con sonidos.
+- Visualización de la Onda en tiempo real.
 
-### 2. Filters
-Two types of filters that shape the sound:
-- **Low-Pass (LP)**: Removes high frequencies, making sound darker
-- **High-Pass (HP)**: Removes low frequencies, making sound thinner
+### 2. Filtros
+Dos tipos de filtros para modelar el sonido:
+- **Low-Pass (LP)**: Elimina frecuencias altas, creando un sonido más oscuro.
+- **High-Pass (HP)**: Elimina frecuencias bajas, haciendo el sonido más delgado.
 
 ### 3. Delay Effect
-A time-based effect that creates echoes:
-- Adjustable delay time
-- Feedback control for multiple echoes
-- Wet/dry mix for effect intensity
+Un efecto basado en el tiempo que genera ecos:
+- Tiempo de retardo ajustable.
+- Control de retroalimentación para múltiples ecos.
+- Mezcla de efecto (wet/dry) para ajustar la intensidad.
 
-## 🎮 Quick Start Guide
+## 🎮 Guía Rápida de uso
 
-1. Install requirements:
+1.	Instala los requisitos:
 ```bash
 pip install pygame numpy sounddevice scipy
 ```
 
-2. Run the program:
+2.	Ejecuta el programa:
 ```bash
 python main.py
 ```
 
-3. Start experimenting:
-   - Press number keys (1-8) to change waveforms
-   - Move mouse to control frequency
-   - Press 'B' for filter mode
-   - Press 'E' to enable effects
+3.	Comienza a experimentar:
+   •	Teclas del 1 al 8 para cambiar de forma de onda.
+	•	Mueve el mouse para controlar la frecuencia.
+	•	Presiona 'B' para activar el modo filtro.
+	•	Presiona 'E' para activar efectos.
 
-## ⌨️ Controls Reference
+## ⌨️ Controles de Referencia
 
 ### Basic Controls
 | Key/Action | Function |
@@ -81,28 +81,20 @@ python main.py
 | 7 | FM | Frequency modulation |
 | 8 | Harmonics | Rich, layered sound |
 
-## 🔧 Technical Implementation
+## 🔧  Implementación Técnica
 
 ### Core Components
-- **Python**: Core programming language
-- **Pygame**: Graphics and user interface
-- **NumPy**: Efficient waveform generation
-- **SoundDevice**: Real-time audio output
+- **Python**: Lenguaje de programación principal.
+- **Pygame**: Gráficos e interfaz de usuario.
+- **NumPy**: Generación de formas de onda eficiente.
+- **SoundDevice**: Salida de audio en tiempo real.
 
-### Key Features
-1. Real-time waveform generation
-2. Digital signal processing for filters
-3. Circular buffer for delay effects
-4. Anti-aliased waveform visualization
+### Funciones Clave
+1.	Generación de formas de onda en tiempo real.
+2.	Procesamiento de señales digitales para filtros.
+3.	Uso de un búfer circular para efectos de retardo.
+4.	Visualización de onda con suavizado (anti-aliasing).
 
-## 📚 Educational Value
-
-This tool helps understand:
-- ✨ Relationship between frequency and pitch
-- 🌊 How different waveforms create different timbres
-- 🎛️ Effect of filters on sound character
-- 🔄 Basic audio effects and signal processing
-- 🎹 Real-time audio synthesis concepts
 
 ## 💻 System Requirements
 - Python 3.7+
@@ -113,178 +105,116 @@ This tool helps understand:
   - SoundDevice
   - SciPy
 
-## 🤝 Contributing
 
-We welcome contributions! Here's how you can help:
-- 🎵 Add new waveforms
-- 🎛️ Implement additional effects
-- 📊 Improve visualizations
-- 📚 Add more educational features
+# Implementación de Sintetizador en Python
 
-## 📝 License
+Un sintetizador de software en tiempo real implementado en Python usando Pygame para la interfaz y NumPy para el procesamiento de audio.
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## Implementación Técnica
 
-## 🙏 Acknowledgments
+### Generación de Formas de Onda y Osciladores
 
-- Thanks to the Python audio community
-- Inspired by classic analog synthesizers
-- Built with love for music education
+El sintetizador implementa varios tipos de formas de onda mediante algoritmos matemáticos:
 
-# Python Synthesizer Implementation
+1. **Onda Sinusoidal**
+   - Implementación: `np.sin(2 * np.pi * frequency * t)`
+   - Oscilación sinusoidal pura usando la función sin de NumPy
+   - Produce el tono más limpio y puro sin armónicos
 
-A real-time software synthesizer implemented in Python using Pygame for the interface and NumPy for audio processing.
+2. **Onda Cuadrada**
+   - Implementación: `np.sign(np.sin(2 * np.pi * frequency * t))`
+   - Creada usando la función sign en una onda sinusoidal
+   - Rica en armónicos impares, produciendo un sonido hueco y brillante
 
-## Technical Implementation
+3. **Onda de Sierra**
+   - Implementación: `2 * (t * frequency - np.floor(0.5 + t * frequency))`
+   - Generada mediante la acumulación de fase y envolvente
+   - Contiene armónicos pares e impares, creando un tono brillante y áspero
 
-### Waveform Generation and Oscillators
+4. **Onda Triangular**
+   - Implementación: `2 * abs(2 * (t * frequency - np.floor(0.5 + t * frequency))) - 1`
+   - Onda de sierra modificada usando valor absoluto
+   - Más suave que la onda de sierra debido a la reducción de armónicos superiores
 
-The synthesizer implements several waveform types through mathematical algorithms:
+5. **Onda de Pulso**
+   - Implementación: Onda cuadrada con ciclo de trabajo variable
+   - Utiliza comparación con umbral de ciclo de trabajo
+   - Permite modulación de ancho de pulso (PWM)
 
-1. **Sine Wave**
-   - Implementation: `np.sin(2 * np.pi * frequency * t)`
-   - Pure sinusoidal oscillation using NumPy's sin function
-   - Produces the cleanest, purest tone with no harmonics
+6. **Oscilador de Ruido**
+   - Implementación: `np.random.uniform(-1, 1, size=buffer_size)`
+   - Genera ruido blanco usando distribución uniforme aleatoria
+   - Útil para percusión y efectos especiales
 
-2. **Square Wave**
-   - Implementation: `np.sign(np.sin(2 * np.pi * frequency * t))`
-   - Created using the sign function on a sine wave
-   - Rich in odd harmonics, producing a hollow, bright sound
-
-3. **Sawtooth Wave**
-   - Implementation: `2 * (t * frequency - np.floor(0.5 + t * frequency))`
-   - Generated by accumulating phase and wrapping
-   - Contains both odd and even harmonics, creating a bright, harsh tone
-
-4. **Triangle Wave**
-   - Implementation: `2 * abs(2 * (t * frequency - np.floor(0.5 + t * frequency))) - 1`
-   - Modified sawtooth wave using absolute value
-   - Softer than sawtooth due to reduced higher harmonics
-
-5. **Pulse Wave**
-   - Implementation: Variable duty cycle square wave
-   - Uses comparison with duty cycle threshold
-   - Allows for pulse width modulation (PWM)
-
-6. **Noise Oscillator**
-   - Implementation: `np.random.uniform(-1, 1, size=buffer_size)`
-   - Generates white noise using uniform random distribution
-   - Useful for percussion and special effects
-
-7. **FM (Frequency Modulation)**
-   - Implementation: Carrier wave modulated by modulator wave
+7. **FM (Modulación de Frecuencia)**
+   - Implementación: Onda portadora modulada por onda moduladora
    - `carrier_freq * (1 + mod_index * np.sin(2 * np.pi * mod_freq * t))`
-   - Creates complex timbres through frequency modulation
+   - Crea timbres complejos mediante modulación de frecuencia
 
-8. **Harmonics**
-   - Implementation: Sum of multiple sine waves at harmonic frequencies
+8. **Armónicos**
+   - Implementación: Suma de múltiples ondas sinusoidales en frecuencias armónicas
    - `Σ(amplitude[n] * sin(2π * n * fundamental * t))`
-   - Creates rich, organic tones through additive synthesis
+   - Crea tonos ricos y orgánicos mediante síntesis aditiva
 
-### Filter Implementation
+### Implementación de Filtros
 
-The synthesizer implements one-pole filters (first-order IIR filters):
+El sintetizador implementa filtros de un polo (filtros IIR de primer orden):
 
-1. **Low-Pass Filter**
+1. **Filtro Paso Bajo**
    ```python
    y[n] = α * x[n] + (1-α) * y[n-1]
-   where α = 2π * cutoff / sample_rate
+   donde α = 2π * frecuencia_corte / frecuencia_muestreo
    ```
-   - Attenuates frequencies above cutoff point
-   - Smooth 6dB/octave rolloff
-   - Real-time coefficient updates based on mouse position
+   - Atenúa frecuencias por encima del punto de corte
+   - Pendiente suave de 6dB/octava
+   - Actualizaciones de coeficientes en tiempo real basadas en la posición del ratón
 
-2. **High-Pass Filter**
+2. **Filtro Paso Alto**
    ```python
    y[n] = α * (y[n-1] + x[n] - x[n-1])
-   where α = 1 / (1 + 2π * cutoff / sample_rate)
+   donde α = 1 / (1 + 2π * frecuencia_corte / frecuencia_muestreo)
    ```
-   - Attenuates frequencies below cutoff point
-   - Complementary to low-pass response
-   - Dynamic cutoff frequency control
+   - Atenúa frecuencias por debajo del punto de corte
+   - Complementario a la respuesta del paso bajo
+   - Control dinámico de frecuencia de corte
 
-### Delay Effect System
+### Sistema de Efectos de Retardo
 
-The delay effect uses a circular buffer implementation:
-- Configurable delay time (up to 1000ms)
-- Feedback control (0-95%)
-- Wet/dry mix control
-- Sample-accurate timing using buffer manipulation
+El efecto de retardo utiliza una implementación de buffer circular:
+- Tiempo de retardo configurable (hasta 1000ms)
+- Control de retroalimentación (0-95%)
+- Control de mezcla húmeda/seca
+- Temporización precisa a nivel de muestra usando manipulación de buffer
 
-### Real-time Audio Processing
+### Procesamiento de Audio en Tiempo Real
 
-The audio system uses:
-- Buffer size: 1024 samples
-- Sample rate: 44100 Hz
-- 32-bit floating point audio processing
-- Callback-based audio output for minimal latency
+El sistema de audio utiliza:
+- Tamaño de buffer: 1024 muestras
+- Frecuencia de muestreo: 44100 Hz
+- Procesamiento de audio en punto flotante de 32 bits
+- Salida de audio basada en callbacks para mínima latencia
 
-## File Structure
+## Flujo de Señal
 
-### `main.py`
-- Main application entry point
-- Pygame interface implementation
-- Event handling and user input processing
-- Real-time visualization system
-- Waveform selector and parameter controls
+1. El oscilador genera la forma de onda cruda
+2. La señal pasa por el filtro (si está activado)
+3. Procesamiento a través de efectos (si están activados)
+4. Salida final enviada al dispositivo de audio
+5. Visualización actualizada con la muestra actual
 
-### `synth.py`
-- Core synthesis engine
-- Oscillator implementations
-- Filter processing
-- Audio callback system
-- Parameter management
-- Effect processing (delay)
+## Consideraciones de Rendimiento
 
-### `oscillator.py`
-- Base oscillator class
-- Individual waveform generator classes
-- Phase accumulation system
-- Amplitude control
+- Operaciones vectorizadas de NumPy para generación eficiente de formas de onda
+- Tablas de búsqueda precalculadas para formas de onda complejas
+- Tamaños de buffer optimizados para baja latencia
+- Interpolación eficiente de parámetros para cambios suaves
+- Impacto mínimo en la recolección de basura mediante reutilización de buffer
 
-### `filter.py`
-- Filter implementations (LP/HP)
-- Coefficient calculation
-- Signal processing algorithms
-
-## Control System
-
-### Mouse Control
-- X-axis: Frequency control (20Hz - 2000Hz, logarithmic)
-- Y-axis: 
-  - Mode A: Amplitude control
-  - Mode B: Filter cutoff frequency
-
-### Keyboard Controls
-- Space: Toggle sound on/off
-- A/B: Switch between amplitude and filter modes
-- L/H: Switch between low-pass and high-pass filters
-- 1-8: Quick waveform selection
-- E: Toggle effects
-- D: Enter delay control mode
-- Arrow keys: Delay parameter control
-
-## Signal Flow
-
-1. Oscillator generates raw waveform
-2. Signal passes through filter (if enabled)
-3. Processed through effects (if enabled)
-4. Final output sent to audio device
-5. Visualization updated with current sample
-
-## Performance Considerations
-
-- NumPy vectorized operations for efficient waveform generation
-- Pre-calculated lookup tables for complex waveforms
-- Optimized buffer sizes for low latency
-- Efficient parameter interpolation for smooth changes
-- Minimal garbage collection impact through buffer reuse
-
-## Technical Requirements
+## Requisitos Técnicos
 
 - Python 3.8+
 - Pygame 2.0+
 - NumPy
-- PyAudio or SDL audio backend
-- Minimum 2.0 GHz CPU recommended
-- Low-latency audio device 
+- Backend de audio PyAudio o SDL
+- CPU de 2.0 GHz mínimo recomendado
+- Dispositivo de audio de baja latencia 
